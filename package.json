@@ -1,0 +1,27 @@
+{
+  "name": "trustworthy-dj",
+  "version": "1.0.0",
+  "description": "Website for DJ",
+  "main": "index.php",
+  "scripts": {
+    "scss": "node-sass sass/styles.scss -o css",
+    "autoprefixer": "postcss -u autoprefixer -r css/*",
+    "serve": "browser-sync start --proxy localhost/trustworthy --files css/*css, js/*.js, *html, *.php, partials/*.php --browser Chrome",
+    "buildcss": "npm run scss && npm run autoprefixer",
+    "watchcss": "onchange \"sass\" -- npm run buildcss",
+    "watchall": "npm-run-all -p serve watchcss"
+  },
+  "author": "Silvio Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.8",
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1",
+    "postcss-cli": "^3.0.0"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.3.1"
+  }
+}
